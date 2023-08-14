@@ -6,6 +6,7 @@ import { HousingLocation } from './housing-location';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'fairhouse';
 
@@ -39,9 +40,11 @@ export class AppComponent {
     }
   ];
 
-  selectedLocation: HousingLocation | undefined;// = this.housingLocationList[0];
+  selectedLocation: HousingLocation | undefined;
 
   updateSelectedLocation(location: HousingLocation) {
-    this.selectedLocation = location;
+    this.selectedLocation
+    ? this.selectedLocation = undefined
+    : this.selectedLocation = location
   }
 }
